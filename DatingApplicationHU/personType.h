@@ -1,8 +1,6 @@
-
 // Declaration file.
 #include <iostream>
 #include <string>
-
 
 class addressType {
 public:

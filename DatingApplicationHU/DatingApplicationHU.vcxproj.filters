@@ -21,6 +21,9 @@
     <ClCompile Include="personType.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="total.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="Infile.txt" />

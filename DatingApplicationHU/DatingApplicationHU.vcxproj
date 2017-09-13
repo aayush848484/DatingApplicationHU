@@ -116,6 +116,7 @@
   <ItemGroup>
     <ClCompile Include="personType.cpp" />
     <ClCompile Include="Source.cpp" />
+    <ClCompile Include="total.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="personType.h" />
