@@ -1,16 +1,17 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include <implementation.h>
+#include "personType.h"
 
 using namespace std;
 
 int main()
 {
 	membershipType members[6];
-	string x, i1, i2, f, l;
-	ifstream myfile;
+	std::string x, i1, i2, f, l;
+	std::ifstream myfile;
 	myfile.open("infile.txt");
+	std::cout << "Output: \n";
 	for (int i = 0; i < 6; i++)
 	{
 		myfile >> f >> l >> members[i].person_no >>
@@ -18,7 +19,7 @@ int main()
 			members[i].address.streetName >> members[i].address.streetType >> members[i].address.city
 			>> members[i].address.stateInitials >> members[i].address.zipCode >> members[i].gender >> i1 >> i2
 			>> members[i].membership_type >> members[i].member_ship_status;
-		members[i].name = f + " " + l;
+		members[i].name = l + " " + f;
 		members[i].setInterest1(i1);
 		members[i].setInterest2(i2);
 		members[i].print_member_type();
