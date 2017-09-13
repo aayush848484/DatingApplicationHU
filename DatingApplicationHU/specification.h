@@ -3,6 +3,7 @@
 #include <iostream>
 #include <string>
 
+
 using namespace std;
 
 class addressType {
@@ -31,6 +32,15 @@ public:
 private:
 	string interest1;
 	string interest2;
+};
+
+class membershipType : public personType{
+public: 
+	char membership_type, member_ship_status;
+
+	membershipType();
+	membershipType(char, char);
+	void print_member_type();
 };
 
 

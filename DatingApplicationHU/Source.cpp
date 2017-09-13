@@ -7,7 +7,7 @@ using namespace std;
 
 int main()
 {
-	personType members[6];
+	membershipType members[6];
 	string x, i1, i2, f, l;
 	ifstream myfile;
 	myfile.open("infile.txt");
@@ -15,12 +15,13 @@ int main()
 	{
 		myfile >> f >> l >> members[i].person_no >>
 			members[i].personID >> members[i].address.streetAddressNum >>
-			members[i].address.streetName >> members[i].address.streetType >> members[i].address.city >> members[i].address.stateInitials >> members[i].address.zipCode >> members[i].gender;
-		myfile >> i1 >> i2;
+			members[i].address.streetName >> members[i].address.streetType >> members[i].address.city
+			>> members[i].address.stateInitials >> members[i].address.zipCode >> members[i].gender >> i1 >> i2
+			>> members[i].membership_type >> members[i].member_ship_status;
 		members[i].name = f + " " + l;
 		members[i].setInterest1(i1);
 		members[i].setInterest2(i2);
-		members[i].printPerson();
+		members[i].print_member_type();
 	}
 	myfile.close();
 	system("pause");
@@ -29,57 +30,50 @@ int main()
 
 /*
 Output:
-Name: Herold, Jill
-Person Number: 1
-Person ID: 2234
-Gender: F
-Street address number: 12 320019
-Street Name: Main St. Washington, DC
-Interest 1: yoga
-Interest 2: facebook
+1. Herold, Jill
+Personal ID : 2234
+Membership Status : 2
+Membership type : 1
+Interests : yoga, facebook
+	123 Main St.Washington, DC 20019
 
-Name: Jackson, Stan
-Person Number: 2
-Person ID: 3748
-Gender: M
-Street address number: 12 30229
-Street Name: Douglas Ave. Baltimore, MD
-Interest 1: sports
-Interest 2: movies
+	Output :
+	2. Jackson, Stan
+	Personal ID : 3748
+	Membership Status : 4
+	Membership type : 2
+	Interests : sports, movies
+	12 Douglas Ave.Baltimore, MD 30229
 
-Name: Jerry, Francis
-Person Number: 3
-Person ID: 6666
-Gender: M
-Street address number: 23 4544040
-Street Name: 6th Street Woodbridge, VA
-Interest 1: movies
-Interest 2: roadtrips
+	Output :
+	3. Jerry, Francis
+	Personal ID : 6666
+	Membership Status : 1
+	Membership type : 1
+	Interests : movies, roadtrips
+	2345 6th Street Woodbridge, VA 44040
 
-Name: Joan, Wilson
-Person Number: 4
-Person ID: 1234
-Gender: F
-Street address number: 12 20019
-Street Name: Georgia Ave. Washington, DC
-Interest 1: romance
-Interest 2: dining
+	Output :
+	4. Joan, Wilson
+	Personal ID : 1234
+	Membership Status : 3
+	Membership type : 2
+	Interests : romance, dining
+	12 Georgia Ave.Washington, DC 20019
 
-Name: Smith, Stanley
-Person Number: 5
-Person ID: 3456
-Gender: M
-Street address number: 56 30229
-Street Name: D Street Baltimore, MD
-Interest 1: movies
-Interest 2: dining
+	Output :
+	5. Smith, Stanley
+	Personal ID : 3456
+	Membership Status : 1
+	Membership type : 2
+	Interests : movies, dining
+	56 D Street Baltimore, MD 30229
 
-Name: Claire, Claude
-Person Number: 6
-Person ID: 2311
-Gender: F
-Street address number: 66 44040
-Street Name: 32nd Street Woodbridge, VA
-Interest 1: cooking
-Interest 2: facebook
-*/
+	Output :
+	6. Claire, Claude
+	Personal ID : 2311
+	Membership Status : 1
+	Membership type : 1
+	Interests : cooking, facebook
+	66 32nd Street Woodbridge, VA 44040
+	*/

@@ -46,3 +46,24 @@ addressType::addressType() {
 	stateInitials = "";
 }
 
+membershipType::membershipType() {
+	membership_type = 0;
+	member_ship_status = 0;
+}
+
+membershipType::membershipType(char membership_type, char membership_status){
+	membership_type = membership_type;
+	member_ship_status = membership_status;
+}
+
+void membershipType::print_member_type() {
+	cout << "Output: \n";
+	cout << person_no << ". " << name << endl;
+	cout << "Personal ID: " << personID << endl;
+	cout << "Membership Status: " << member_ship_status << endl;
+	cout << "Membership type: " << membership_type << endl;
+	cout << "Interests: " << getInterest1() << " , " << getInterest2() << endl;
+	cout << address.streetAddressNum << " " << address.streetName << " " << address.streetType << " " <<
+		address.city << " " << address.stateInitials << " " << address.zipCode << endl;
+	cout << endl;
+}
