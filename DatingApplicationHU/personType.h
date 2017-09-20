@@ -1,6 +1,18 @@
 // Declaration file.
 #include <iostream>
 #include <string>
+#include <vector>
+
+class contact_infoType
+{
+public:
+	std::string get_emailAddress;
+private:
+	std::string emailAddress;
+	std::string phoneNumber;
+	std::string userName;
+	std::string password;
+};
 
 class addressType {
 public:
@@ -28,16 +40,21 @@ public:
 private:
 	std::string interest1;
 	std::string interest2;
+
+protected:
+	contact_infoType contact_info;
 };
 
-class membershipType : public personType{
-public: 
+class membershipType : public personType {
+public:
 	char membership_type, member_ship_status;
 
 	membershipType();
 	membershipType(char, char);
 	void print_member_type();
 };
+
+void print_vector(std::vector <membershipType> members, std::vector<membershipType>::iterator i);
 
 
 

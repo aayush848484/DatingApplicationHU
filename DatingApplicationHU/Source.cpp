@@ -4,7 +4,6 @@
 #include <vector>
 #include "personType.h"
 
-void print_vector(std::vector <membershipType> members, std::vector<membershipType>::iterator i);
 
 int main()
 {
@@ -33,12 +32,11 @@ int main()
 
 void print_vector(std::vector <membershipType> members, std::vector<membershipType>::iterator i) {
 	for (i = members.begin(); i != members.end(); i++) {
-	i->print_member_type();
+		i->print_member_type();
 	}
 }
 
 /*
-Output:
 1. Jill Herold,
 Personal ID: 2234
 Membership Status: 2
