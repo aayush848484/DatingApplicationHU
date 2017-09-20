@@ -65,3 +65,14 @@ void membershipType::print_member_type() {
 		address.city << " " << address.stateInitials << " " << address.zipCode << std::endl;
 	std::cout << std::endl;
 }
+
+class contact_infoType
+{
+public:
+	std::string get_emailAddress;
+private:
+	std::string emailAddress;
+	std::string phoneNumber;
+	std::string userName;
+	std::string password;
+};

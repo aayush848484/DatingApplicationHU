@@ -1,30 +1,40 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <vector>
 #include "personType.h"
+
+void print_vector(std::vector <membershipType> members, std::vector<membershipType>::iterator i);
 
 int main()
 {
-	membershipType members[6];
+	std::vector <membershipType> members;
+	std::vector<membershipType>::iterator i;
+	membershipType member_temp;
 	std::string x, i1, i2, f, l;
 	std::ifstream myfile;
 	myfile.open("infile.txt");
-	std::cout << "Output: \n";
-	for (int i = 0; i < 6; i++)
-	{
-		myfile >> f >> l >> members[i].person_no >>
-			members[i].personID >> members[i].address.streetAddressNum >>
-			members[i].address.streetName >> members[i].address.streetType >> members[i].address.city
-			>> members[i].address.stateInitials >> members[i].address.zipCode >> members[i].gender >> i1 >> i2
-			>> members[i].membership_type >> members[i].member_ship_status;
-		members[i].name = l + " " + f;
-		members[i].setInterest1(i1);
-		members[i].setInterest2(i2);
-		members[i].print_member_type();
+	for (int x = 0; x < 6; x++) {
+		myfile >> f >> l >> member_temp.person_no >>
+			member_temp.personID >> member_temp.address.streetAddressNum >>
+			member_temp.address.streetName >> member_temp.address.streetType >> member_temp.address.city
+			>> member_temp.address.stateInitials >> member_temp.address.zipCode >> member_temp.gender >> i1 >> i2
+			>> member_temp.membership_type >> member_temp.member_ship_status;
+		member_temp.name = l + " " + f;
+		member_temp.setInterest1(i1);
+		member_temp.setInterest2(i2);
+		members.push_back(member_temp);
 	}
 	myfile.close();
+	print_vector(members, i);
 	system("pause");
 	return 0;
+}
+
+void print_vector(std::vector <membershipType> members, std::vector<membershipType>::iterator i) {
+	for (i = members.begin(); i != members.end(); i++) {
+	i->print_member_type();
+	}
 }
 
 /*
