@@ -54,11 +54,3 @@ public:
 	void print_member_type();
 };
 
-void print_vector(std::vector <membershipType> members, std::vector<membershipType>::iterator i);
-
-
-
-
-
-
-

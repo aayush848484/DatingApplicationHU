@@ -24,18 +24,6 @@ std::string personType::getInterest2() const {
 	return interest2;
 }
 
-void personType::printPerson() const {
-	std::cout << "Name: " << name << std::endl;
-	std::cout << "Person Number: " << person_no << std::endl;
-	std::cout << "Person ID: " << personID << std::endl;
-	std::cout << "Gender: " << gender << std::endl;
-	std::cout << "Street address number: " << address.streetAddressNum << address.zipCode << std::endl;
-	std::cout << "Street Name: " << address.streetName << " " << address.streetType << " " << address.city << " " << address.stateInitials << std::endl;
-	std::cout << "Interest 1: " << interest1 << std::endl;
-	std::cout << "Interest 2: " << interest2 << std::endl;
-	std::cout << std::endl;
-}
-
 addressType::addressType() {
 	streetAddressNum = 0;
 	zipCode = 0;

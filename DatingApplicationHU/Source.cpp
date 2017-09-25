@@ -4,38 +4,44 @@
 #include <vector>
 #include "personType.h"
 
+struct NodeType{
+	NodeType *next = NULL;
+	membershipType value;
+};
 
 int main()
 {
-	std::vector <membershipType> members;
-	std::vector<membershipType>::iterator i;
-	membershipType member_temp;
+	NodeType *current = NULL, *head = NULL;
 	std::string x, i1, i2, f, l;
 	std::ifstream myfile;
 	myfile.open("infile.txt");
 	for (int x = 0; x < 6; x++) {
-		myfile >> f >> l >> member_temp.person_no >>
-			member_temp.personID >> member_temp.address.streetAddressNum >>
-			member_temp.address.streetName >> member_temp.address.streetType >> member_temp.address.city
-			>> member_temp.address.stateInitials >> member_temp.address.zipCode >> member_temp.gender >> i1 >> i2
-			>> member_temp.membership_type >> member_temp.member_ship_status;
-		member_temp.name = l + " " + f;
-		member_temp.setInterest1(i1);
-		member_temp.setInterest2(i2);
-		members.push_back(member_temp);
-	}
+		if (head == NULL) {
+			head = new NodeType;
+			current = head;
+		}
+		else {
+			(*current).next = new NodeType;
+			current = (*current).next;
+		}
+				myfile >> f >> l >> (*current).value.person_no >>
+					(*current).value.personID >> (*current).value.address.streetAddressNum >>
+					(*current).value.address.streetName >> (*current).value.address.streetType >> (*current).value.address.city
+				>> (*current).value.address.stateInitials >> (*current).value.address.zipCode >> (*current).value.gender >> i1 >> i2
+				>> (*current).value.membership_type >> (*current).value.member_ship_status;
+				(*current).value.name = l + " " + f;
+				(*current).value.setInterest1(i1);
+				(*current).value.setInterest2(i2);
+		}
 	myfile.close();
-	print_vector(members, i);
+	current = head;
+	while (current != NULL) {
+		(*current).value.print_member_type();
+		current = (*current).next;
+	}
 	system("pause");
 	return 0;
 }
-
-void print_vector(std::vector <membershipType> members, std::vector<membershipType>::iterator i) {
-	for (i = members.begin(); i != members.end(); i++) {
-		i->print_member_type();
-	}
-}
-
 /*
 1. Jill Herold,
 Personal ID: 2234
